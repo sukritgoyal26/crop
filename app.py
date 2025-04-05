@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import joblib
 from keras.models import load_model
-from tfkan.layers import DenseKAN
+# from tfkan.layers import DenseKAN
 
 import os
 import subprocess
