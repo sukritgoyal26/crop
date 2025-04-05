@@ -4,6 +4,16 @@ import joblib
 from keras.models import load_model
 from tfkan.layers import DenseKAN
 
+import os
+import subprocess
+import sys
+
+try:
+    from tfkan.layers import DenseKAN
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "git+https://github.com/google-research/kan.git@main#egg=tfkan&subdirectory=tf_kan"])
+    from tfkan.layers import DenseKAN
+    
 # Load model and preprocessing tools
 model = load_model("crop_recommender_model.keras", custom_objects={'DenseKAN': DenseKAN})
 scaler = joblib.load("scaler.pkl")
