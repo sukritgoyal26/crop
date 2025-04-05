@@ -7,4 +7,4 @@ seaborn
 tensorflow
 keras
 joblib
-git+https://github.com/google-research/kan.git
+git+https://github.com/google-research/kan.git@main#egg=tfkan&subdirectory=tf_kan
